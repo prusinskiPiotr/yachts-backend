@@ -1,0 +1,8 @@
+.vscode
+.vscode/* 
+env/
+.env
+*.pyc
+__pycache__
+db.sqlite3
+media
