@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-class Yachts(models.Model):
+class Yacht(models.Model):
     model_name = models.CharField(max_length=255)
     length = models.CharField(max_length=10)
     width = models.CharField(max_length=10)
@@ -12,9 +12,9 @@ class Yachts(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
-class Rentals(models.Model):
+class Rental(models.Model):
     from_date = models.DateField()
     to_date = models.DateField()
     insurance = models.BooleanField()
-    yacht = models.ForeignKey(Yachts, on_delete=models.CASCADE)
+    yacht = models.ForeignKey(Yacht, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)

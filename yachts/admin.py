@@ -1,13 +1,13 @@
 from django.contrib import admin
-from .models import Yachts, Rentals
+from .models import Yacht, Rental
 
 
-@admin.register(Yachts)
-class YachtsAdmin(admin.ModelAdmin):
+@admin.register(Yacht)
+class YachtAdmin(admin.ModelAdmin):
     list_display = ('id', 'model_name', 'length', 'width', 'year', 'max_crew', 'berths', 'owner')
 
 
-@admin.register(Rentals)
-class RentalsAdmin(admin.ModelAdmin):
+@admin.register(Rental)
+class RentalAdmin(admin.ModelAdmin):
     list_display = ('id', 'from_date', 'to_date', 'insurance', 'yacht', 'user')
 
