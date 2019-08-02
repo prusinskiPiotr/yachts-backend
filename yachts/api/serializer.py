@@ -5,7 +5,7 @@ from ..models import Yacht, Rental
 class YachtSerializer(serializers.ModelSerializer):
     class Meta:
         model = Yacht
-        fields = ['model_name', 'length', 'width', 'year', 'max_crew', 'berths', 'owner']
+        fields = ['id', 'model_name', 'length', 'width', 'year', 'max_crew', 'berths', 'owner']
 
 
 class RentalSerializer(serializers.ModelSerializer):
