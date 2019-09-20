@@ -1,6 +1,7 @@
-from ..models import Yacht, Rental
-from rest_framework import viewsets, pagination
+from rest_framework import viewsets, pagination, filters
 from .serializer import YachtSerializer, RentalSerializer
+
+from ..models import Yacht, Rental
 
 
 class ResultPagination(pagination.PageNumberPagination):
@@ -12,6 +13,8 @@ class YachtViewSet(viewsets.ModelViewSet):
     queryset = Yacht.objects.all()
     serializer_class = YachtSerializer
     pagination_class = ResultPagination
+    filter_backends = [filters.OrderingFilter]
+    ordering_fields = ['model_name', 'length', 'width', 'year', 'max_crew', 'berths']
 
 
 class RentalViewSet(viewsets.ModelViewSet):
