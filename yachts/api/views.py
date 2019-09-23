@@ -13,8 +13,9 @@ class YachtViewSet(viewsets.ModelViewSet):
     queryset = Yacht.objects.all()
     serializer_class = YachtSerializer
     pagination_class = ResultPagination
-    filter_backends = [filters.OrderingFilter]
+    filter_backends = [filters.OrderingFilter, filters.SearchFilter]
     ordering_fields = ['model_name', 'length', 'width', 'year', 'max_crew', 'berths']
+    search_fields = ['model_name', 'year']
 
 
 class RentalViewSet(viewsets.ModelViewSet):
