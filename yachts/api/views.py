@@ -17,6 +17,7 @@ class YachtViewSet(viewsets.ModelViewSet):
     filter_backends = [filters.OrderingFilter, filters.SearchFilter, DjangoFilterBackend]
     ordering_fields = ['model_name', 'length', 'width', 'year', 'max_crew', 'berths']
     search_fields = ['model_name', 'year']
+    filterset_fields = ['model_name', 'length', 'width', 'year', 'max_crew', 'berths']
 
 
 class RentalViewSet(viewsets.ModelViewSet):
